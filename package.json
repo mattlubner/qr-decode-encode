@@ -11,8 +11,8 @@
   "license": "MIT",
   "author": "Matt Lubner <matt@mattlubner.com>",
   "dependencies": {
-    "jimp": "^0.2.28",
-    "jsqr": "^1.0.4",
-    "qrcode": "^1.2.0"
+    "jimp": "^0.10.2",
+    "jsqr": "^1.2.0",
+    "qrcode": "^1.4.4"
   }
 }

@@ -2,17 +2,30 @@
   "name": "qr-decode-encode",
   "description": "Shell scripts for decoding / encoding QR codes.",
   "version": "0.0.0-unversioned",
-  "main": "decode.js",
+  "main": "lib/index.js",
+  "bin": "lib/bin.js",
   "scripts": {
-    "decode": "node decode.js",
-    "encode": "node encode.js",
-    "test": "[ \"$(node decode.js \"$(node encode.js 'magic_test_string')\")\" == \"magic_test_string\" ]"
+    "start": "ts-node src/bin.ts",
+    "build": "tsc && chmod +x lib/bin.js",
+    "clean": "rimraf lib",
+    "test": "[ \"$(ts-node src/bin.ts decode \"$(ts-node src/bin.ts encode 'magic_test_string')\")\" == \"magic_test_string\" ]",
+    "type-check": "tsc --noEmit",
+    "decode": "yarn start decode",
+    "encode": "yarn start encode"
   },
   "license": "MIT",
   "author": "Matt Lubner <matt@mattlubner.com>",
   "dependencies": {
     "jimp": "^0.14.0",
     "jsqr": "^1.3.1",
-    "qrcode": "^1.4.4"
+    "qrcode": "^1.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5",
+    "yargs": "^16.1.0"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.3.5",
+    "@types/yargs": "^15.0.9",
+    "rimraf": "^3.0.2"
   }
 }

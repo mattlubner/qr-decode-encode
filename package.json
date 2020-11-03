@@ -10,11 +10,25 @@
     "clean": "rimraf lib",
     "test": "[ \"$(ts-node src/bin.ts decode \"$(ts-node src/bin.ts encode 'magic_test_string')\")\" == \"magic_test_string\" ]",
     "type-check": "tsc --noEmit",
+    "lint": "eslint src",
+    "reformat": "eslint src --fix",
     "decode": "yarn start decode",
     "encode": "yarn start encode"
   },
   "license": "MIT",
   "author": "Matt Lubner <matt@mattlubner.com>",
+  "prettier": {
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "extends": [
+      "typescript",
+      "typescript/prettier"
+    ]
+  },
   "dependencies": {
     "jimp": "^0.14.0",
     "jsqr": "^1.3.1",
@@ -26,6 +40,13 @@
   "devDependencies": {
     "@types/qrcode": "^1.3.5",
     "@types/yargs": "^15.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2",
     "rimraf": "^3.0.2"
   }
 }

@@ -55,8 +55,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mattlubner/qr-decode-encode.git"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

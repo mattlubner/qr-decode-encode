@@ -2,19 +2,25 @@
 import yargs from 'yargs';
 import { readFileSync } from 'fs';
 import { normalize } from 'path';
-import { atoqr, qrtoa } from './';
+import { atoqr, bctoa, qrtoa, barcodeFormats, BARCODE_DECODERS } from './';
 
 const argv = yargs(process.argv.slice(2))
   .scriptName(require('../package.json').name) // eslint-disable-line @typescript-eslint/no-var-requires
   .usage('Usage: $0 <command> [options]')
   .command(
-    'decode <qr_code>',
+    'decode <qr_code> [options]',
     'Decode qr_code back into an ascii string',
     (_yargs) => {
-      _yargs.positional('qr_code', {
-        describe: 'A data url or a path to an image file',
-        type: 'string',
-      });
+      _yargs
+        .positional('qr_code', {
+          describe: 'A data url or a path to an image file',
+          type: 'string',
+        })
+        .option('format', {
+          describe: 'The format of the qrcode / barcode',
+          choices: ['qrcode', 'barcode', ...barcodeFormats],
+          default: 'qrcode',
+        });
     },
   )
   .alias('qrtoa', 'decode')
@@ -27,7 +33,6 @@ const argv = yargs(process.argv.slice(2))
           describe: 'An ascii string',
         })
         .option('file', {
-          alias: 'f',
           describe: 'Path to save output to (as *.{png,svg,txt})',
           normalize: true,
           type: 'string',
@@ -50,6 +55,7 @@ const main = async () => {
   switch (command) {
     case 'decode': {
       const dataUrlOrFile = argv.qr_code as string;
+      const format = argv.format as 'qrcode' | 'barcode' | BARCODE_DECODERS;
       const [, content] =
         dataUrlOrFile.match(
           /^data:image\/(?:jpeg|png|bmp|tiff|gif);base64,(.+)$/,
@@ -58,8 +64,18 @@ const main = async () => {
       const buffer = isDataUrl
         ? Buffer.from(content, 'base64')
         : readFileSync(normalize(dataUrlOrFile));
-      const ascii = await qrtoa(buffer);
-      process.stdout.write(ascii);
+      if (format === 'qrcode') {
+        const ascii = await qrtoa(buffer);
+        process.stdout.write(ascii);
+      } else {
+        const reportFormat = !argv.clean && format === 'barcode';
+        const ascii = await bctoa(
+          buffer,
+          format === 'barcode' ? undefined : format,
+          reportFormat,
+        );
+        process.stdout.write(ascii);
+      }
       break;
     }
     case 'encode': {

@@ -8,7 +8,7 @@
     "start": "ts-node src/bin.ts",
     "build": "tsc && chmod +x lib/bin.js",
     "clean": "rimraf lib",
-    "test": "[ \"$(ts-node src/bin.ts decode \"$(ts-node src/bin.ts encode 'magic_test_string')\")\" == \"magic_test_string\" ]",
+    "test": "/usr/bin/env bash -c '[ \"$(ts-node src/bin.ts decode \"$(ts-node src/bin.ts encode 'magic_test_string')\")\" == \"magic_test_string\" ]'",
     "type-check": "tsc --noEmit",
     "lint": "eslint src",
     "reformat": "eslint src --fix",

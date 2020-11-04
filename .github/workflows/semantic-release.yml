@@ -27,11 +27,10 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn install --frozen-lockfile
       - run: yarn build
-      - name: Release
+      - run: yarn semantic-release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
 
   # publish-gpr:
   #   needs: test
@@ -44,7 +43,7 @@ jobs:
   #         registry-url: https://npm.pkg.github.com/
   #     - run: yarn install --frozen-lockfile
   #     - run: yarn build
-  #     - name: Release
+  #     - run: yarn semantic-release
   #       env:
+  #         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   #         NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       run: yarn semantic-release

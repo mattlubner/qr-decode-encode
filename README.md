@@ -1,6 +1,6 @@
 # qr-decode-encode
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mattlubner/qr-decode-encode/Semantic%20Release) ![npm](https://img.shields.io/npm/v/qr-decode-encode)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mattlubner/qr-decode-encode/Semantic%20Release)](https://github.com/mattlubner/qr-decode-encode/actions?query=workflow%3A%22Semantic+Release%22) [![npm](https://img.shields.io/npm/v/qr-decode-encode)](https://www.npmjs.com/package/qr-decode-encode)
 
 Simple shell commands for decoding / encoding QR codes.
 

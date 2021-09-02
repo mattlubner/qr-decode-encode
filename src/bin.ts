@@ -10,7 +10,7 @@ const argv = yargs(process.argv.slice(2))
   .command(
     'decode <qr_code> [options]',
     'Decode qr_code back into an ascii string',
-    (_yargs) => {
+    _yargs => {
       _yargs
         .positional('qr_code', {
           describe: 'A data url or a path to an image file',
@@ -27,7 +27,7 @@ const argv = yargs(process.argv.slice(2))
   .command(
     'encode <ascii> [options]',
     'Encode an ascii string into a qr code',
-    (_yargs) => {
+    _yargs => {
       _yargs
         .positional('ascii', {
           describe: 'An ascii string',
@@ -91,7 +91,7 @@ const main = async () => {
   }
 };
 
-main().catch((err) => {
+main().catch(err => {
   console.error(err);
   process.exit(1);
 });

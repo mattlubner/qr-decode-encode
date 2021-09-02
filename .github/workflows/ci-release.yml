@@ -12,10 +12,8 @@ jobs:
           node-version: '12'
           registry-url: 'https://registry.npmjs.org'
       - run: yarn install --frozen-lockfile
-      - run: yarn test
-      - run: yarn lint
-      - run: yarn type-check
-      - run: yarn build
+      - run: yarn ci-lint
+      - run: yarn ci-test
 
   publish:
     needs: test

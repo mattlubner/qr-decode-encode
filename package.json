@@ -18,18 +18,6 @@
   },
   "license": "MIT",
   "author": "Matt Lubner <matt@mattlubner.com>",
-  "prettier": {
-    "bracketSpacing": true,
-    "jsxBracketSameLine": true,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
-  "eslintConfig": {
-    "extends": [
-      "typescript",
-      "typescript/prettier"
-    ]
-  },
   "dependencies": {
     "javascript-barcode-reader": "^0.6.8",
     "jimp": "^0.14.0",

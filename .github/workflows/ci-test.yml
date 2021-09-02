@@ -1,6 +1,10 @@
 name: Test Suite
 
-on: pull_request
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - main
 
 jobs:
   test:

@@ -47,7 +47,8 @@ const argv = yargs(process.argv.slice(2))
     type: 'boolean',
   })
   .help('h')
-  .alias('h', 'help').argv;
+  .alias('h', 'help')
+  .parseSync();
 
 const [command] = argv._;
 

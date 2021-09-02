@@ -3,9 +3,8 @@
     "allowJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "es6"
-    ],
+    "lib": ["es6"],
+    "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "lib",
     "resolveJsonModule": true,
@@ -14,13 +13,8 @@
     "strict": true,
     "target": "es5"
   },
-  "include": [
-    "src/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "package.json"
-  ],
+  "include": ["src/*.ts"],
+  "exclude": ["node_modules", "package.json"],
   "ts-node": {
     "files": true
   }

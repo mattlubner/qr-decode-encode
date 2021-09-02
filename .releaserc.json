@@ -1,0 +1,8 @@
+{
+  "branches": [
+    {
+      "name": "main",
+      "channel": "latest"
+    }
+  ]
+}

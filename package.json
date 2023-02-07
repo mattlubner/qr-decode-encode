@@ -25,7 +25,7 @@
   "author": "Matt Lubner <matt@mattlubner.com>",
   "dependencies": {
     "javascript-barcode-reader": "^0.6.9",
-    "jimp": "^0.16.1",
+    "jimp": "^0.22.4",
     "jsqr": "^1.4.0",
     "qrcode": "^1.4.4",
     "ts-node": "^10.2.1",
@@ -54,7 +54,7 @@
   "resolutions": {
     "qrcode/yargs/yargs-parser": "^13.1.2",
     "semantic-release/@semantic-release/npm/npm/lock-verify/@iarna/cli/yargs/os-locale/mem": "4.0.0",
-    "jpeg-js": "0.4.4"
+    "jimp": "0.22.4"
   },
   "repository": {
     "type": "git",

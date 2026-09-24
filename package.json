@@ -24,10 +24,10 @@
   "license": "MIT",
   "author": "Matt Lubner <matt@mattlubner.com>",
   "dependencies": {
-    "javascript-barcode-reader": "^0.6.9",
-    "jimp": "^0.22.4",
+    "javascript-barcode-reader": "^1.0.0",
+    "jimp": "^0.22.12",
     "jsqr": "^1.4.0",
-    "qrcode": "^1.4.4",
+    "qrcode": "^1.5.4",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.2",
     "yargs": "^17.1.1"
@@ -45,7 +45,7 @@
     "eslint-config-typescript": "^3.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.0",
-    "is-ci": "^3.0.0",
+    "is-ci": "^4.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
@@ -54,7 +54,7 @@
   "resolutions": {
     "qrcode/yargs/yargs-parser": "^13.1.2",
     "semantic-release/@semantic-release/npm/npm/lock-verify/@iarna/cli/yargs/os-locale/mem": "4.0.0",
-    "jimp": "0.22.4"
+    "jimp": "0.22.12"
   },
   "repository": {
     "type": "git",

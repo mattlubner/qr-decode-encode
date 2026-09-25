@@ -5,7 +5,7 @@ import { normalize } from 'path';
 import { atoqr, bctoa, qrtoa, barcodeFormats, BARCODE_DECODERS } from './';
 
 const argv = yargs(process.argv.slice(2))
-  .scriptName(require('../package.json').name) // eslint-disable-line @typescript-eslint/no-var-requires,@typescript-eslint/no-require-imports
+  .scriptName(require('../package.json').name) // eslint-disable-line @typescript-eslint/no-require-imports
   .usage('Usage: $0 <command> [options]')
   .command(
     'decode <qr_code> [options]',

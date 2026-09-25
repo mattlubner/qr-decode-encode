@@ -1,5 +1,0 @@
-{
-  "root": true,
-  "extends": ["typescript", "plugin:prettier/recommended", "prettier"],
-  "ignorePatterns": ["lib", "node_modules"]
-}

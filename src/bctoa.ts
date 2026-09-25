@@ -8,7 +8,7 @@ export enum BARCODE_DECODERS {
   'code-93' = 'code-93',
   'ean-13' = 'ean-13',
   'ean-8' = 'ean-8',
-  'codabar' = 'codabar',
+  codabar = 'codabar',
 }
 
 export const barcodeFormats = Object.values(BARCODE_DECODERS);

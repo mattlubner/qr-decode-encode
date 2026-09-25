@@ -6,9 +6,10 @@ import * as QRCode from 'qrcode';
 export const atoqr = async (
   ascii: string,
   output: 'dataUrl' | string = 'dataUrl',
-): Promise<string> => {
+): Promise<string | null> => {
   if (output === 'dataUrl') {
     return QRCode.toDataURL(ascii);
   }
-  return QRCode.toFile(output, ascii);
+  await QRCode.toFile(output, ascii);
+  return null;
 };

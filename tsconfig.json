@@ -4,14 +4,14 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["es6"],
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "outDir": "lib",
     "resolveJsonModule": true,
     "rootDir": "src",
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5"
+    "target": "ES6"
   },
   "include": ["src/*.ts"],
   "exclude": ["node_modules", "package.json"],

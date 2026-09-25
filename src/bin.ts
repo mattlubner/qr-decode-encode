@@ -5,7 +5,7 @@ import { normalize } from 'path';
 import { atoqr, bctoa, qrtoa, barcodeFormats, BARCODE_DECODERS } from './';
 
 const argv = yargs(process.argv.slice(2))
-  .scriptName(require('../package.json').name) // eslint-disable-line @typescript-eslint/no-var-requires
+  .scriptName(require('../package.json').name) // eslint-disable-line @typescript-eslint/no-var-requires,@typescript-eslint/no-require-imports
   .usage('Usage: $0 <command> [options]')
   .command(
     'decode <qr_code> [options]',
@@ -83,7 +83,7 @@ const main = async () => {
       const ascii = argv.ascii as string;
       const file = argv.file as string | undefined;
       const qrCode = await atoqr(ascii, file);
-      process.stdout.write(qrCode);
+      process.stdout.write(qrCode ?? `qr code saved to ${file}`);
       break;
     }
   }

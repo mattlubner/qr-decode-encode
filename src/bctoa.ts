@@ -1,5 +1,5 @@
 import javascriptBarcodeReader from 'javascript-barcode-reader';
-import Jimp from 'jimp';
+import { Jimp } from 'jimp';
 
 export enum BARCODE_DECODERS {
   'code-128' = 'code-128',
